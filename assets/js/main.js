@@ -187,6 +187,14 @@ function btnCarrito(){
   })
 }
 
+function pagarTodo(){
+  carrito.splice(0,carrito.length)
+  renderTabla()
+  totalAcumulado.textContent = "";
+}
+btnPago = document.querySelector("#btn-pago");
+btnPago.addEventListener("click", pagarTodo) 
+
 function buscarEnArrayBorrar(id){
   carrito.splice(carrito.indexOf(  carrito.find( item => item._id === id) )  , 1)
 }
